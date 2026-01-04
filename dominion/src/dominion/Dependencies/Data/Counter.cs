@@ -16,7 +16,6 @@ namespace dominion.src.dominion.Dependencies.Data
             list.Add(" _/ // / / / /_/  __/ // / /   |  ");
             list.Add("/___/_/ /_/\\__/\\___/_/___//_/|_|  ");
             list.Add("                                   ");
-            list.Add("               Dominion by dead artis");
             list.Add("");
 
             if (this.Browsers.Count() > 0)

