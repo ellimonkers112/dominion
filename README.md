@@ -1,6 +1,6 @@
-## Dominion Infostealer - Red Team Tool
+## Dominion stealer
 
-Disclaimer: This project is intended strictly for authorized red team engagements, penetration testing, and educational purposes only. Use in any unauthorized or illegal manner is prohibited. The developers assume no responsibility for misuse. Always obtain explicit permission before deploying on any target system.
+The foundation for modern, advanced information stealers.
 
 ## Overview
 
@@ -21,6 +21,8 @@ Modular Design: Separate namespaces/folders for different theft modules.
  - Crypto wallets
  - Gaming platforms
  - General apps
+
+## Recently added
 
  * System Data Collection: Clipboard, screenshots, system info, WiFi passwords.
  * Encryption & Hashing: Secure handling of stolen data (AES encryption, hashing for integrity).
