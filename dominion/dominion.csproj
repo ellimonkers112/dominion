@@ -94,7 +94,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="src\dominion\Configuration\configuration.cs" />
+    <Compile Include="src\dominion\Configuration\Configuration.cs" />
+    <Compile Include="src\dominion\Dependencies\Data\Counter.cs" />
     <Compile Include="src\dominion\Dependencies\Data\InMemmoryZip.cs" />
     <Compile Include="src\dominion\Dependencies\Data\Paths.cs" />
     <Compile Include="src\dominion\Security\AntiDumpSectionScramble.cs" />
