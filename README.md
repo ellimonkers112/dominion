@@ -1,4 +1,4 @@
-## Dominion stealer
+## Dominion
 
 The foundation for modern, advanced information stealers.
 
